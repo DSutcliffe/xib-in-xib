@@ -35,7 +35,6 @@ class VC1ViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         print("in vc")
-//        delegate?.dismiss()
         viewModel.dismiss()
     }
 }
