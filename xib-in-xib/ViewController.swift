@@ -1,0 +1,34 @@
+//
+//  ViewController.swift
+//  xib-in-xib
+//
+//  Created by Daniel Sutcliffe on 29/09/2022.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var vc1Button: UIButton!
+    @IBOutlet weak var vc2Button: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+    }
+    
+    private func configureUI() {
+        vc1Button.setTitle("Goto VC1", for: .normal)
+        vc2Button.setTitle("Goto VC2", for: .normal)
+    }
+
+    @IBAction func vc1ButtonPressed(_ sender: UIButton) {
+        VC1Coordinator(presenter: self).start()
+    }
+    
+    @IBAction func vc2ButtonPressed(_ sender: UIButton) {
+    }
+    
+}
+
