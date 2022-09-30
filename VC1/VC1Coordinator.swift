@@ -8,7 +8,7 @@
 import UIKit
 
 class VC1Coordinator: Coordinator {
-    public var presenter: UIViewController
+    var presenter: UIViewController
     let viewController: VC1ViewController
     let viewModel = VC1ViewModel()
     
@@ -31,8 +31,7 @@ class VC1Coordinator: Coordinator {
 }
 
 extension VC1Coordinator: VC1ViewModelDelegate {
-    public func dismiss() {
-        print("in coordinator")
+    func dismiss() {
         presenter.dismiss(animated: true, completion: nil)
     }
 }

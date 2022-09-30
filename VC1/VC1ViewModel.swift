@@ -14,8 +14,9 @@ protocol VC1ViewModelDelegate: AnyObject {
 class VC1ViewModel {
     public var delegate: VC1ViewModelDelegate?
     
+    let backButtonTitle = "Back"
+    
     func dismiss() {
-        print("in vm")
         delegate?.dismiss()
     }
 }

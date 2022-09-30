@@ -7,13 +7,7 @@
 
 import UIKit
 
-protocol VC1ViewControllerDelegate: AnyObject {
-    func dismiss()
-}
-
-class VC1ViewController: UIViewController {
-    var delegate: VC1ViewControllerDelegate?
-    
+class VC1ViewController: UIViewController {    
     let viewModel: VC1ViewModel
     
     @IBOutlet weak var backButton: UIButton!
@@ -30,11 +24,15 @@ class VC1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureUI()
+    }
+    
+    func configureUI() {
         view.backgroundColor = .green
+        backButton.setTitle(viewModel.backButtonTitle, for: .normal)
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        print("in vc")
         viewModel.dismiss()
     }
 }

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         configureUI()
     }
     
-    private func configureUI() {
+    func configureUI() {
         vc1Button.setTitle("Goto VC1", for: .normal)
         vc2Button.setTitle("Goto VC2", for: .normal)
     }
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func vc2ButtonPressed(_ sender: UIButton) {
+        VC2Coordinator(presenter: self).start()
     }
-    
 }
 
